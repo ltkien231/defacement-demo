@@ -3,6 +3,10 @@ import pool from "../config/database";
 
 const router = Router();
 
+router.get("/hello", (req, res) => {
+  res.send("Hello World");
+});
+
 router.get("/", (req, res) => {
   res.render("login", {
     title: "Login",

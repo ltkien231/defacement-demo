@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "node dist/app.js",
-    "build": "tsc",
+    "build": "tsc && cp -r src/views dist/",
     "start:dev": "nodemon ./src/app.ts"
   },
   "keywords": [],
