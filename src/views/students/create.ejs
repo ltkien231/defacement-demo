@@ -50,7 +50,7 @@
                            id="name" 
                            name="name" 
                            value="<%= typeof formData !== 'undefined' ? formData.name : '' %>"
-                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           class="px-3 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                            required>
                 </div>
 
@@ -59,18 +59,18 @@
                     <textarea id="description" 
                               name="description" 
                               rows="4"
-                              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                              class="px-3 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                               required><%= typeof formData !== 'undefined' ? formData.description : '' %></textarea>
                 </div>
 
                 <div>
                     <label for="image_url" class="block text-sm font-medium text-gray-700">Image URL</label>
-                    <input type="url" 
+                    <input type="string" 
                            id="image_url" 
                            name="image_url" 
                            value="<%= typeof formData !== 'undefined' ? formData.image_url : '' %>"
-                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                           required>
+                           class="px-3 py-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           >
                     <p class="mt-1 text-sm text-gray-500">Enter a valid image URL (e.g., from Unsplash)</p>
                 </div>
 

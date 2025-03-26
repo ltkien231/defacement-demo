@@ -32,8 +32,12 @@ router.get("/create", (req, res) => {
 // Handle profile creation
 router.post("/create", async (req, res) => {
   const { name, description, image_url } = req.body;
-
-  if (!name || !description || !image_url) {
+  let image = image_url;
+  if (!image_url) {
+    image =
+      "https://images.unsplash.com/photo-1742576948659-3c630862a38d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  }
+  if (!name || !description) {
     return res.render("students/create", {
       title: "Create Student Profile",
       error: "All fields are required",
@@ -45,7 +49,7 @@ router.post("/create", async (req, res) => {
     await pool.query("INSERT INTO students (name, description, image_url) VALUES (?, ?, ?)", [
       name,
       description,
-      image_url,
+      image,
     ]);
     res.redirect("/students");
   } catch (error) {
