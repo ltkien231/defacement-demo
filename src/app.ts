@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import homeRouter from "./routes/home";
 import authRouter from "./routes/auth";
+import studentsRouter from "./routes/students";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/", homeRouter);
 app.use("/", authRouter);
+app.use("/students", studentsRouter);
 
 // Error handling middleware
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
